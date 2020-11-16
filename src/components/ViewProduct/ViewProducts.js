@@ -38,7 +38,7 @@ export default class ViewProduct extends Component {
                 <Card className={"border border-dark bg-dark text-white"}>
                     <Card.Header>
                         <div style={{ "float": "left" }}>
-                            <FontAwesomeIcon icon={faList} />
+                            <FontAwesomeIcon icon={faList} /> View All Products
                         </div>
                     </Card.Header>
                     <Card.Body>
