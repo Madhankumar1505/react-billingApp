@@ -22,7 +22,7 @@ export default function NavigationBar() {
                     <NavDropdown.Item eventKey="4.1" href={"createPrd"}>Create Products</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Bill Products" id="nav-dropdown">
-                    <NavDropdown.Item eventKey="4.1" href={""}>Bill Products</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.1" href={"billing"}>Bill Products</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="View Reports" id="nav-dropdown">
                     <NavDropdown.Item eventKey="4.1" href={""}>View Reports</NavDropdown.Item>

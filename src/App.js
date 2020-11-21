@@ -9,6 +9,7 @@ import BookList from './components/BookList';
 import CreateProduct from './components/CreateProduct/CreateProduct';
 import ViewProduct from './components/ViewProduct/ViewProducts';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import BillProducts from './components/BillProducts/BillProducts';
 
 export default function App() {
   const headerArray =
@@ -32,6 +33,7 @@ export default function App() {
               <Route path="/createPrd" exact component={CreateProduct}></Route>
               <Route path="/edit/:productCode" exact component={CreateProduct}></Route>
               <Route path="/ViewPrd" exact component={ViewProduct}></Route>
+              <Route path="/billing" exact component={BillProducts}></Route>
               <Route path="*" component={() => <Welcome headerArray={headerArray} />}></Route>
             </Switch>
           </Col>
