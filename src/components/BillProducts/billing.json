@@ -1,0 +1,66 @@
+[
+    {
+        "productCode": "Test1",
+        "name": "Test1",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 10,
+        "stock": 20
+    },
+    {
+        "productCode": "Test2",
+        "name": "Test2",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 5,
+        "stock": 20
+    },
+    {
+        "productCode": "Test3",
+        "name": "Test3",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 7,
+        "stock": 20
+    },
+    {
+        "productCode": "Test4",
+        "name": "Test4",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 9,
+        "stock": 20
+    },
+    {
+        "productCode": "Test5",
+        "name": "Test5",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 4,
+        "stock": 20
+    },
+    {
+        "productCode": "Test6",
+        "name": "Test6",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 12,
+        "stock": 20
+    },
+    {
+        "productCode": "Test7",
+        "name": "Test7",
+        "mrp": 100,
+        "sellRate": 95,
+        "qty": 11,
+        "stock": 20
+    },
+    {
+        "productCode": "Test8",
+        "name": "Test8",
+        "mrp": 100.50,
+        "sellRate": 95,
+        "qty": 14,
+        "stock": 20
+    }
+]
