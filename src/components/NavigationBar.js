@@ -26,6 +26,7 @@ export default function NavigationBar() {
                 </NavDropdown>
                 <NavDropdown title="View Reports" id="nav-dropdown">
                     <NavDropdown.Item eventKey="4.1" href={""}>View Reports</NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.2" href={"cssplural"}>CSS Plural</NavDropdown.Item>
                 </NavDropdown>
 
             </Nav>
