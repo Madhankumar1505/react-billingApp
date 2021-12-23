@@ -12,14 +12,15 @@ export const useData = ((defaultValue) => {
 });
 
 export const getAPIPath = () => {
-    return "http://localhost:8080/";
+    return "http://localhost:7080/apps/";
 }
 
 const axios_ = axios.create({
-    baseURL: getAPIPath,
+    baseURL: getAPIPath(),
     responseType: "json",
     ContentType: "application/json"
 });
+
 
 const TIMEOUT = 60 * 1000;
 
@@ -39,7 +40,8 @@ export const getService = (reqObj) => {
     if (reqObj.prefix) {
         url = reqObj.prefix + url;
     }
-
+    console.log(url);
+    console.log(reqObj.data);
     if (reqObj.method === "POST") {
         return axios_.post(url, reqObj.data, setRequestOptions(reqObj));
     } else if (reqObj.method === "PUT") {
@@ -52,6 +54,7 @@ export const getService = (reqObj) => {
 }
 
 export const useFetchData = ({ reqObj, setData }) => {
+    //console.log(reqObj);
     const [error, setError] = useState(null);
     const [url] = useState(reqObj.url);
     const [loading, setLoading] = useLoading(false);
@@ -61,6 +64,7 @@ export const useFetchData = ({ reqObj, setData }) => {
         if (url) {
             setLoading(true);
             let service = getService(reqObj);
+            console.log(service);
             service.then(res => {
                 try {
                     if (reqObj.dataPrefix) {
@@ -81,10 +85,11 @@ export const useFetchData = ({ reqObj, setData }) => {
                     setLoading(false);
                 }
             }).catch((error) => {
+                console.log(error);
                 setError(error);
                 setLoading(false);
             });
         }
     }, [url]);
-    return [loading, error, resData]
-}
+    return [loading, error, callAPI, resData]
+};
