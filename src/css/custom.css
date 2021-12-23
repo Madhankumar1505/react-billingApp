@@ -1,0 +1,39 @@
+.menuListDown.nav-test{
+    position: relative;
+    overflow: visible;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menuListDown.nav-test li{
+    padding: 0 15px;
+}
+.menuListDown.nav-test li a:hover,.menuListDown.nav-test li a.active {
+    border-bottom: 2px solid #fff;
+}
+
+.menuListDown.nav-test li a {
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 0px 5px 0px;
+    text-decoration: none;
+}
+
+.menuListDown.nav-test .dropdown-menu>li>a:hover{
+    border-bottom: none;
+}
+
+.menuListDown.nav-test .dropdown-menu>li>a{
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.subHeader .menuListDown.nav-test li a.active{
+    border-bottom: 4px solid #D52B1E;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
