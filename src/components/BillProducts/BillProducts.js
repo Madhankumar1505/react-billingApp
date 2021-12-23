@@ -76,10 +76,12 @@ export default class BillProducts extends Component {
 
     Add = (event) => {
         event.preventDefault();
-        if (this.state.amount != null && this.state.amount !== 0) {
+        if (this.state.productCode !== undefined && this.state.productCode.length > 0) {
             const tempData = this.state.billTable;
             tempData.push(this.state);
             this.setState({ billTable: tempData });
+        } else {
+            window.alert("Add the line item");
         }
         this.setState(this.initiateForm);
     };
@@ -102,24 +104,32 @@ export default class BillProducts extends Component {
     onChnageValue = event => {
         if (event.target.name === 'qty') {
             if (event.target.value < 0) {
+                this.setState({
+                    [event.target.name]: 0
+                });
                 return;
             }
         }
         this.setState({
             [event.target.name]: event.target.value
         });
-        if (this.state !== null && this.state.sellRate !== null
-            && this.state.qty !== null && event.target.value !== 'undefined') {
+        if (this.state !== null && this.state.sellRate !== undefined
+            && this.state.qty !== undefined && event.target.value !== undefined) {
             if (event.target.name === 'sellRate' || event.target.name === 'qty') {
-                const sellRate = event.target.name === 'sellRate' ? event.target.value === 'undefined' ? 0 : event.target.value
-                    : this.state.sellRate;
-                const qty = event.target.name === 'qty' ? event.target.value === 'undefined' ? 0 : event.target.value
-                    : this.state.qty;
+                const sellRate = event.target.name === 'sellRate' ? event.target.value
+                    : this.state.sellRate === undefined ? 0 : this.state.sellRate;
+                const qty = event.target.name === 'qty' ? event.target.value
+                    : this.state.qty === undefined ? 0 : this.state.qty;
                 this.setState({ amount: sellRate * qty });
             }
         }
         //window.alert(event.target.name);
     };
+
+    deleteLineItem = (produtcCode) => {
+        window.alert('Testing');
+    };
+
 
     render() {
         const { value, suggestions } = this.state;
@@ -185,7 +195,7 @@ export default class BillProducts extends Component {
                                         <Form.Control type="text" name="amount" value={amount}
                                             onChange={this.onChnageValue} disabled></Form.Control>
                                     </Form.Group>
-                                    <Button size="sm" variant="success" type="submit">Add</Button>
+                                    <Button id="sbmit" size="sm" variant="success" type="submit">Add</Button>
                                 </Form.Row>
                             </Form>
                         </div>
@@ -200,6 +210,7 @@ export default class BillProducts extends Component {
                                         <td>Sell Price</td>
                                         <td>Qty</td>
                                         <td>Total</td>
+                                        <td>Action</td>
                                     </tr>
                                 </thead>
 
@@ -218,6 +229,10 @@ export default class BillProducts extends Component {
                                                     <td>{data.sellRate}</td>
                                                     <td>{data.qty}</td>
                                                     <td>{data.amount}</td>
+                                                    <td>
+                                                        <Button type="button"
+                                                            id="delte" size="sm" variant="danger"
+                                                            onChange={this.deleteLineItem(data.productCode)}>Delete</Button></td>
                                                 </tr>)
                                     }
                                 </tbody>
