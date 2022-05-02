@@ -12,8 +12,8 @@ export default class MyToast extends Component {
         };
         return (
             <div style={this.props.show ? toastCss : null}>
-                <Toast className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`} show={this.props.show}>
-                    <Toast.Header className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`} show={this.props.show}>
+                <Toast className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`} show={this.props.showNotification}>
+                    <Toast.Header className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`} show={this.props.showNotification}>
                         <strong className="mr-auto">Success</strong>
                     </Toast.Header>
                     <Toast.Body>

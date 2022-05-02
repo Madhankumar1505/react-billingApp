@@ -12,7 +12,7 @@ export const useData = ((defaultValue) => {
 });
 
 export const getAPIPath = () => {
-    return "http://localhost:7080/apps/";
+    return "http://localhost:2022/bit2blop/";
 }
 
 const axios_ = axios.create({
